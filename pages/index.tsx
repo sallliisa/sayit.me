@@ -14,9 +14,9 @@ const Home = () => {
                     <div><Button action={() => {router.push("/view")}}>View your Say It!</Button></div>
                 </div>
                 <div className="flex flex-row gap-4 items-center justify-center w-full max-w-xl">
-                    <Link href="/privacypolicy"><p className='underline text-blue-500'>Privacy policy</p></Link>
+                    <Link href="/privacypolicy"><p className='underline text-indigo-500'>Privacy policy</p></Link>
                     <p>•</p>
-                    <Link href="/learnmore"><p className='underline text-blue-500'>Learn more</p></Link>
+                    <Link href="/learnmore"><p className='underline text-indigo-500'>Learn more</p></Link>
                 </div>
             </main>
         </>

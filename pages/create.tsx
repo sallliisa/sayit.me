@@ -18,15 +18,16 @@ const Create = () => {
             </div>
             <div className='flex flex-col gap-4 items-center justify-center w-full max-w-xl'>
                 {helpState &&
-                    <div className="flex flex-col gap-2 items-center justify-center">
-                        <p className='text-gray-500 text-center'>Say It! is a simple way to send messages anonymously to your friends.</p>
-                        <p className='text-gray-500 text-center'>Create a Say It by entering a username and a key</p>
-                        <p className='text-gray-500 text-center'>Share your Say It ID to your friends to let them say something to you!</p>
-                        <p className='text-gray-500 text-center'>You can then view what your friends sent you using your username and key</p>
-                        <p className="text-center font-bold text-red-500">Be sure to save your Say It ID and key!</p>
-                        <p className="text-center font-bold text-red-500">Losing your ID means losing access to your Say It ID and key!</p>
-                        <p className="text-center font-bold text-red-500">There's no way of retrieving it back!</p>
-                        <button onClick={() => setHelpState(!helpState)}><p className='underline'>Ok!</p></button>
+                    <div className="flex flex-col gap-8 items-center justify-center">
+                        <div className="flex flex-col gap-2 items-center justify-center">
+                            <p className='text-gray-500 text-center'>Say It! is a simple way to send messages anonymously to your friends.</p>
+                            <p className='text-gray-500 text-center'>Create a Say It by entering a username and a key</p>
+                            <p className='text-gray-500 text-center'>Share your Say It ID to your friends to let them say something to you!</p>
+                            <p className='text-gray-500 text-center'>You can then view what your friends sent you using your username and key</p>
+                            <p className="text-center font-bold text-red-500">Be sure to save your Say It ID/link and key!</p>
+                            <p className="text-center font-bold text-red-500">Losing your ID/link means losing access to your Say It page, and there's no way of retrieving it back!</p>
+                        </div>
+                        <Button action={() => setHelpState(!helpState)}>Ok!</Button>
                     </div>
                 }
                 {!helpState && 
@@ -40,7 +41,7 @@ const Create = () => {
 
                     {code != "" ? (
                         <>
-                        <div className="flex flex-col gap-5 items-center justify-center p-4 rounded-lg border-2 border-blue-500">
+                        <div className="flex flex-col gap-5 items-center justify-center p-4 rounded-lg border-2 border-indigo-500">
                             <p className="text-center">Share this code with your friends to let them say something to you!</p>
                             <div className="flex flex-col items-center justify-center">
                                 <p className='text-gray-500'>Your code is: </p>

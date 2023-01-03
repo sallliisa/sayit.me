@@ -15,9 +15,8 @@ const LearnMore = () => {
                     <p className='text-gray-500 text-center'>Create a Say It by entering a username and a key</p>
                     <p className='text-gray-500 text-center'>Share your Say It ID to your friends to let them say something to you!</p>
                     <p className='text-gray-500 text-center'>You can then view what your friends sent you using your username and key</p>
-                    <p className="text-center font-bold text-red-500">Be sure to save your Say It ID and key!</p>
-                    <p className="text-center font-bold text-red-500">Losing your ID means losing access to your Say It ID and key!</p>
-                    <p className="text-center font-bold text-red-500">There's no way of retrieving it back!</p>
+                    <p className="text-center font-bold text-red-500">Be sure to save your Say It ID/link and key!</p>
+                    <p className="text-center font-bold text-red-500">Losing your ID/link means losing access to your Say It page, and there's no way of retrieving it back!</p>
                 </div>
                 <Button action={() => {router.back()}}>Ok!</Button>
             </main>

@@ -30,7 +30,7 @@ const SendMessage = (props: SendMessageProps) => {
         <p className='text-xl text-gray-500'>to @{props.name}</p>
       </div>
       <div className='flex flex-col gap-4 items-center justify-center w-full max-w-xl'>
-        <textarea value={message} onChange={(e) => {setMessage(e.target.value)}} className='resize-none bg-neutral-700 min-w-full h-48 rounded-xl p-4' placeholder='Type your message here'></textarea>
+        <textarea value={message} onChange={(e) => {setMessage(e.target.value)}} className='resize-none bg-neutral-700 focus:border-gray-500 focus:border focus:outline-0 min-w-full h-48 rounded-xl p-4' placeholder='Type your message here'></textarea>
         <Button disabled={message == ""} action={() => {
           say(props.id, message).then((status) => {
             if (status === 200) setSent(true)

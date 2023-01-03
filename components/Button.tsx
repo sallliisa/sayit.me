@@ -7,7 +7,7 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
     const {children, action, disabled=false} = props
     return (
-        <button disabled={disabled} onClick={disabled ? () => {} : (action)} className={`text-white font-bold py-2 px-4 rounded-md min-w-full bg- ${disabled ? `bg-neutral-800 hover:bg-neutral-800 cursor-not-allowed` : `bg-blue-500 hover:bg-blue-700`}`}>
+        <button disabled={disabled} onClick={disabled ? () => {} : (action)} className={`text-white font-bold py-2 px-4 rounded-md min-w-full ${disabled ? `bg-neutral-800 hover:bg-neutral-800 cursor-not-allowed` : `bg-indigo-600 hover:bg-indigo-800`}`}>
             <div className="flex flex-row gap-2 items-center justify-center">
                 {children}
             </div>

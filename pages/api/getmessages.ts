@@ -8,6 +8,10 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { Page } = await connect();
+    if (req.body.key == "" || req.body.id == "") {
+        res.status(400).json({ name: "", messages: "" })
+        return;
+    }
     const page = await Page.findOne({ _id: req.body.id });
     if (page) {
         if (page.key != req.body.key) {

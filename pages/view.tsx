@@ -27,7 +27,7 @@ const ViewMessage = () => {
                     <div className='flex flex-col gap-4 items-center justify-center w-full max-w-xl'>
                         <input onChange={(e) => {setId(e.target.value)}} className='w-full h-12 rounded-xl p-4' placeholder='Your Say It ID'/>
                         <input onChange={(e) => {setKey(e.target.value)}} className='w-full h-12 rounded-xl p-4' placeholder='Key'/>
-                        <Button action={() => {
+                        <Button disabled={id == "" || key == ""} action={() => {
                             getMessages(id as string, key as string).then(([status, data]) => {
                                 if (status != 200) {
                                     if (status == 404) setAlertMessage("Say It ID not found!")

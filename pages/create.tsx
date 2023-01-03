@@ -9,6 +9,7 @@ const Create = () => {
     const [code, setCode] = useState("")
     const [name, setName] = useState("")
     const [key, setKey] = useState("")
+    const [copyState, setCopyState] = useState("")
     const [helpState, setHelpState] = useState(false)
     return (
         <main className='flex flex-col gap-8 items-center justify-center w-full max-w-xl'>
@@ -46,13 +47,25 @@ const Create = () => {
                                 <button onClick={() => {navigator.clipboard.writeText(code)}}><p className='text-gray-500'>{code}</p></button>
                             </div>
                             <div className="flex flex-col gap-4">
-                                <Button action={() => {navigator.clipboard.writeText(code)}}>Copy code<IconClipboard/></Button>
-                                <Button action={() => {navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_PROTO}://${process.env.NEXT_PUBLIC_VERCEL_URL}/${code}`)}}>Copy link<IconLink/></Button>
+                                <Button action={() => {navigator.clipboard.writeText(code).then(() => {
+                                    setCopyState("code")
+                                })}}>Copy code<IconClipboard/></Button>
+                                <Button action={() => {navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_PROTO}://${process.env.NEXT_PUBLIC_VERCEL_URL}/${code}`).then(() => {
+                                    setCopyState("link")
+                                })}}>Copy link<IconLink/></Button>
                             </div>
-                            <div className="flex flex-col">
-                                <p className="text-center font-bold text-red-500">Be sure to save your Say It ID and key!</p>
-                                <p className="text-center font-bold text-red-500">You'll need to to access your Say It page!</p>
-                            </div>
+                            {copyState == "" ? (
+                                <div className="flex flex-col">
+                                    <p className="text-center font-bold text-red-500">Be sure to save your Say It ID and key!</p>
+                                    <p className="text-center font-bold text-red-500">You'll need to to access your Say It page!</p>
+                                </div>
+                            ) : (
+                                copyState == "code" ? (
+                                    <p className="text-center font-bold text-green-500">Copied code to clipboard!</p>
+                                ) : (
+                                    <p className="text-center font-bold text-green-500">Copied link to clipboard!</p>
+                                )
+                            )}
                         </div>
                         </>
                         ) : (

@@ -47,6 +47,13 @@ export const getCode = async (name: string, key: string) => {
 }
 
 export const getMessages = async (id: string, key: string) => {
+    if (id.includes("://")) {
+        if (id.slice(-1) == "/") {
+            id = id.slice(-25, -1)
+        } else {
+            id = id.slice(-24)
+        }
+    }
     if (id.length != 24) {
         return [404, ""]
     }

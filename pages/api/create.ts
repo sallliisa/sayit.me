@@ -7,6 +7,10 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { Page } = await connect();
+    if (req.body.name == "" || req.body.key == "") {
+        res.status(400).json({ code: "" })
+        return;
+    }
     const page = new Page({
         name: req.body.name,
         key: req.body.key,

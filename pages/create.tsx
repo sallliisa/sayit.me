@@ -56,7 +56,7 @@ const Create = () => {
                         </div>
                         </>
                         ) : (
-                            <Button action={() => {
+                            <Button disabled={name == '' || key == ''} action={() => {
                                 code == "" ? (
                                     getCode(name, key).then((c) => {
                                         setCode(c)

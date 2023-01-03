@@ -61,7 +61,7 @@ const Create = () => {
                             </div>
                             {copyState == "" ? (
                                 <div className="flex flex-col">
-                                    <p className="text-center font-bold text-red-500">Be sure to save your Say It ID and key!</p>
+                                    <p className="text-center font-bold text-red-500">Be sure to save your Say It ID or link and key!</p>
                                     <p className="text-center font-bold text-red-500">You'll need to to access your Say It page!</p>
                                 </div>
                             ) : (

@@ -22,6 +22,15 @@ type SendMessageProps = NextPage & {
 const SendMessage = (props: SendMessageProps) => {
   const [message, setMessage] = useState("")
   const [sent, setSent] = useState(false)
+  if (props.name == "") {
+    return (
+      <main className='flex flex-col gap-8 items-center justify-center w-full max-w-xl'>
+        <div className='flex flex-col gap-2 items-center justify-center'>
+          <h2 className='text-2xl font-bold'>User not found</h2>
+        </div>
+      </main>
+    )
+  }
   return (
     !sent ? (
     <main className='flex flex-col gap-8 items-center justify-center w-full max-w-xl'>

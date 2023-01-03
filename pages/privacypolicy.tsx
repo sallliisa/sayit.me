@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
                     </p>
                     <p className="text-center text-gray-500">
                         sayit.me does not sell or share your information with third parties, or anyone else.
-                        The information that you provided is only used to provide the service that you requested.
+                        The information that you provided is only used to provide the service that is requested.
                     </p>
                 </div>
                 <Button action={() => {router.back()}}>Ok!</Button>

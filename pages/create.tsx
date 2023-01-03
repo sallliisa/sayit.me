@@ -32,14 +32,14 @@ const Create = () => {
                 <>
                     <button onClick={() => setHelpState(!helpState)}><p className='underline'>What's this?</p></button>
                     <div className="flex flex-row gap-2 items-center justify-center w-full max-w-xl">
-                        <h1 className="text-xl font-bold">@</h1>
-                        <input value={name} onChange={(e) => {setName(e.target.value)}} className='w-full h-12 rounded-xl p-4' placeholder='Username'></input>
-                        <input value={key} onChange={(e) => {setKey(e.target.value)}} className='w-full h-12 rounded-xl p-4' placeholder='Key'></input>
+                        <h1 className="text-xl font-bold text-gray-500">@</h1>
+                        <input value={name} onChange={(e) => {setName(e.target.value)}} className='bg-neutral-700 focus:border-gray-500 focus:border focus:outline-0 w-full h-12 rounded-xl p-4' placeholder='Username'></input>
+                        <input value={key} onChange={(e) => {setKey(e.target.value)}} className='bg-neutral-700 focus:border-gray-500 focus:border focus:outline-0 w-full h-12 rounded-xl p-4' placeholder='Key'></input>
                     </div>
 
                     {code != "" ? (
                         <>
-                        <div className="flex flex-col gap-5 items-center justify-center p-4 rounded-lg border-4 border-blue-500">
+                        <div className="flex flex-col gap-5 items-center justify-center p-4 rounded-lg border-2 border-blue-500">
                             <p className="text-center">Share this code with your friends to let them say something to you!</p>
                             <div className="flex flex-col items-center justify-center">
                                 <p className='text-gray-500'>Your code is: </p>

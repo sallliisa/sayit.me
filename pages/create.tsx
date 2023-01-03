@@ -44,16 +44,18 @@ const Create = () => {
                         <div className="flex flex-col gap-5 items-center justify-center p-4 rounded-lg border-2 border-indigo-500">
                             <p className="text-center">Share this code with your friends to let them say something to you!</p>
                             <div className="flex flex-col items-center justify-center">
-                                <p className='text-gray-500'>Your code is: </p>
-                                <button onClick={() => {navigator.clipboard.writeText(code)}}><p className='text-gray-500'>{code}</p></button>
-                            </div>
-                            <div className="flex flex-col gap-4">
-                                <Button action={() => {navigator.clipboard.writeText(code).then(() => {
-                                    setCopyState("code")
-                                })}}>Copy code<IconClipboard/></Button>
-                                <Button action={() => {navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_PROTO}://${process.env.NEXT_PUBLIC_VERCEL_URL}/${code}`).then(() => {
-                                    setCopyState("link")
-                                })}}>Copy link<IconLink/></Button>
+                                <div className="flex flex-row gap-1 items-center justify-center">
+                                    <p className='text-gray-500'><span className="text-green-500 font-bold">Code:</span> {code}</p>
+                                    <button onClick={() => {navigator.clipboard.writeText(code).then(() => {
+                                        setCopyState("code")
+                                    })}}><IconClipboard size={20} className="text-gray-500 hover:text-indigo-600"/></button>
+                                </div>
+                                <div className="flex flex-row gap-1 items-center justify-center">
+                                    <p className='text-gray-500'><span className="text-green-500 font-bold">Link:</span> {`${process.env.NEXT_PUBLIC_PROTO}://${process.env.NEXT_PUBLIC_VERCEL_URL}/${code}`}</p>
+                                    <button onClick={() => {navigator.clipboard.writeText(code).then(() => {
+                                        setCopyState("code")
+                                    })}}><IconClipboard size={20} className="text-gray-500 hover:text-indigo-600"/></button>
+                                </div>
                             </div>
                             {copyState == "" ? (
                                 <div className="flex flex-col">

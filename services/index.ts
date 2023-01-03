@@ -18,7 +18,7 @@ export const say = async (id: string, message: string) => {
 
 export const getName = async (context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>) => {
     const { id } = context.query
-    const res = await fetch(`${process.env.PROTO}://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/getname`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_PROTO}://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/getname`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

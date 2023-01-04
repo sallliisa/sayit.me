@@ -25,6 +25,11 @@ const ViewMessage = () => {
                         <h2 className='text-2xl font-bold'>View your Say It!</h2>
                     </div>
                     <div className='flex flex-col gap-4 items-center justify-center w-full max-w-xl'>
+                        {alertMessage != "" && (
+                            <div className='flex flex-col items-center justify-center bg-red-500 w-full max-w-xl h-16 rounded-md'>
+                                <p className='text-black'>{alertMessage}</p>
+                            </div>
+                        )}
                         <input onChange={(e) => {setId(e.target.value)}} className='bg-neutral-700 focus:border-gray-500 focus:border focus:outline-0 w-full h-12 rounded-xl p-4' placeholder='Say It ID or link'/>
                         <input onChange={(e) => {setKey(e.target.value)}} className='bg-neutral-700 focus:border-gray-500 focus:border focus:outline-0 w-full h-12 rounded-xl p-4' placeholder='Key'/>
                         <Button disabled={id == "" || key == ""} action={() => {
@@ -38,9 +43,6 @@ const ViewMessage = () => {
                                 }
                             })
                         }}>View</Button>
-                        {alertMessage != "" && 
-                            <p className='text-red-500'>{alertMessage}</p>
-                        }
                     </div>
                 </>
             ) : (

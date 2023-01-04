@@ -47,12 +47,14 @@ export const getCode = async (name: string, key: string) => {
 }
 
 export const getMessages = async (id: string, key: string) => {
-    if (id.includes("://")) {
-        if (id.slice(-1) == "/") {
-            id = id.slice(-25, -1)
-        } else {
-            id = id.slice(-24)
-        }
+    if (id.includes("//")) {
+        const re = /^https?:\/\/[^\/]*?\/(.{24})/
+        const m = id.match(re)
+        if (m) id = m[1]
+    } else if (id.includes("/")) {
+        const re = /[^\/]*\/(.{24})/
+        const m = id.match(re)
+        if (m) id = m[1]
     }
     if (id.length != 24) {
         return [404, ""]

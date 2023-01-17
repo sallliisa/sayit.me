@@ -8,15 +8,15 @@ const Home = () => {
         <>  
             <main className="flex flex-col gap-8 items-center justify-center w-full max-w-xl">
                 <h1 className="text-6xl font-bold">sayit.me</h1>
-                <p>Get anonymous messages from everyone!</p>
+                <p className="text-gray-500">Get anonymous messages from everyone!</p>
                 <div className="flex flex-row gap-4 items-center justify-center w-full max-w-xl">
                     <div><Button action={() => {router.push("/create")}}>Create your Say It!</Button></div>
                     <div><Button action={() => {router.push("/view")}}>View your Say It!</Button></div>
                 </div>
                 <div className="flex flex-row gap-4 items-center justify-center w-full max-w-xl">
-                    <Link href="/privacypolicy"><p className='underline text-indigo-500'>Privacy policy</p></Link>
+                    <Link href="/privacypolicy"><p className='underline'>Privacy policy</p></Link>
                     <p>•</p>
-                    <Link href="/learnmore"><p className='underline text-indigo-500'>Learn more</p></Link>
+                    <Link href="/learnmore"><p className='underline'>Learn more</p></Link>
                 </div>
             </main>
         </>
